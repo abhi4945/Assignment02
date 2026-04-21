@@ -51,7 +51,7 @@ function Signup() {
       setMsg("Signup successful! Redirecting to login...");
 
       setTimeout(() => {
-        window.location.href = "/login";
+        window.location.href = "/";
       }, 1500);
 
     } catch (err) {
