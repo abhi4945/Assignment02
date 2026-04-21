@@ -13,10 +13,18 @@ function Cart() {
 
   /*****Remove product from cart*****/
   const RemoveFromCart = (product) => {
-    const cartList = cart.filter(item=>item._id!==product)
+    const cartList = cart.filter(item => item._id !== product)
     setCart(cartList)
-    
-    alert("Remove from cart successfuly");
+    axios.delete(`https://assignment02-itrm.onrender.com/api/cart/${product}`).
+      then(res => {
+        if (res.status === 200) {
+          alert("Remove from cart successfuly")
+        }
+        else {
+          alert("Remove from cart unsuccessfuly")
+        }
+      })
+      .catch(err => console.log(err));
   };
 
   // Calculate total
