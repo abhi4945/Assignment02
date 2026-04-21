@@ -4,15 +4,17 @@ import axios from "axios";
 function Home() {
   const [products, setProducts] = useState([]);
 
+  /******fetch product list from API*******/
   useEffect(() => {
     axios.get("https://assignment02-itrm.onrender.com/api/products")
       .then(res => setProducts(res.data))
       .catch(err => console.log(err));
   }, []);
 
+  /*******Click on Add product call below addToCart Function******/
   const addToCart = (product) => {
     axios.post("https://assignment02-itrm.onrender.com/api/cart/add", product);
-    alert("Added to cart");
+    alert("Added to cart successfuly");
   };
 
   return (

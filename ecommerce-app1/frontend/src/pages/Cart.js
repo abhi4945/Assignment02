@@ -4,11 +4,20 @@ import axios from "axios";
 function Cart() {
   const [cart, setCart] = useState([]);
 
+  /******fetch added product list from API*******/
   useEffect(() => {
     axios.get("https://assignment02-itrm.onrender.com/api/cart")
       .then(res => setCart(res.data))
       .catch(err => console.log(err));
   }, []);
+
+  /*****Remove product from cart*****/
+  const RemoveFromCart = (product) => {
+    const cartList = cart.filter(item=>item._id!==product)
+    setCart(cartList)
+    
+    alert("Remove from cart successfuly");
+  };
 
   // Calculate total
   const total = cart.reduce((sum, item) => sum + item.price, 0);
@@ -72,7 +81,7 @@ function Cart() {
                   borderRadius: "5px",
                   cursor: "pointer"
                 }}
-                onClick={() => alert("Remove feature coming next")}
+                onClick={() => RemoveFromCart(item._id)}
               >
                 Remove
               </button>
