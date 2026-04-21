@@ -5,13 +5,13 @@ function Home() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products")
+    axios.get("https://assignment02-itrm.onrender.com/api/products")
       .then(res => setProducts(res.data))
       .catch(err => console.log(err));
   }, []);
 
   const addToCart = (product) => {
-    axios.post("http://localhost:5000/api/cart/add", product);
+    axios.post("https://assignment02-itrm.onrender.com/api/cart/add", product);
     alert("Added to cart");
   };
 
