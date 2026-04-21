@@ -19,7 +19,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 🔴 VALIDATION
+    // VALIDATION
     if (!form.email || !form.password) {
       setError("All fields are required");
       return;
