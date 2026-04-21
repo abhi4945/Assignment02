@@ -14,7 +14,7 @@ function Navbar() {
       <h2>🛒 GadgetZone</h2>
 
       <div>
-        <Link to="/" style={{
+        <Link to="/Home" style={{
           color: "white",
           margin: "10px",
           textDecoration: "none"
