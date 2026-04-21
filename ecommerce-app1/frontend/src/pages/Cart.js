@@ -15,8 +15,8 @@ function Cart() {
   const RemoveFromCart = (product) => {
     const cartList = cart.filter(item => item._id !== product)
     setCart(cartList)
-    axios.delete(`https://assignment02-itrm.onrender.com/api/cart/${product}`).
-      then(res => {
+    axios.delete(`https://assignment02-itrm.onrender.com/api/cart/${product}`)
+      .then(res => {
         if (res.status === 200) {
           alert("Remove from cart successfuly")
         }

@@ -46,6 +46,8 @@ function Signup() {
         form
       );
 
+      console.log(res)
+
       setMsg("Signup successful! Redirecting to login...");
 
       setTimeout(() => {
